@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for file in ./files/*
+do
+    name=$(basename $file)
+    letter=${name:0:1}
+    lower_letter=$(echo $letter | tr '[:upper:]' '[:lower:]')
+    
+    mv $file ./$lower_letter/$name
+done
